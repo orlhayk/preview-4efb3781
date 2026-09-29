@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="ja"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="noindex,nofollow" name="robots"/><title>YouWare記事・FB反映版 2026-09-29</title>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&amp;family=Noto+Sans+JP:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>YouWare記事下書き</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Noto+Sans+JP:wght@400;700&display=swap">
 <style>
 :root{--bg:#F5F6F8;--paper:#FFFFFF;--ink:#1B2230;--muted:#5A6476;--line:#DDE1E8;--accent:#2F55C8;--soft:#E8EDFB;--code:#EEF0F4}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#12151B;--paper:#1A1E26;--ink:#E6E9EF;--muted:#9AA3B3;--line:#2C323D;--accent:#8FA8F5;--soft:#222C45;--code:#242A35}}
@@ -27,13 +26,9 @@ strong{background:linear-gradient(transparent 60%,var(--soft) 60%)}
 ul{padding-left:1.3em;margin:0 0 1em}
 a{color:var(--accent)}
 </style>
-<p class="meta"><b>2026年9月29日・FB反映版（確認用／note未公開）</b><br/><a href="#feedback-20260929">再検証の追記へ</a> ／ <a href="before-feedback-20260929.html">変更前の記事</a></p>
-<article class="note"><figure><img alt="サムネ" src="img/header.png"/></figure>
-
-
-
-
-<h1>AIのコネクタは数より中身。YouWareで競合調査から企画まで試した</h1>
+<p class="meta"><b>下書き（未公開・確認用）</b></p>
+<article class="note">
+<figure><img src="img/header.png" alt="サムネ"><figcaption>サムネ</figcaption></figure><h1>AIのコネクタは数より中身。YouWareで競合調査から企画まで試した</h1>
 <p>※YouWareから依頼を受けて書いています（PR）。内容は使ったままの記録です。</p>
 <p>会社員をしながら、副業を3つやっています。犬や猫が出てくる感動系のYouTube（最近やっと収益化が通りました）、LINEスタンプと絵文字、それとこのnoteです。</p>
 <p>3つとも、悩みは同じです。<strong>次に何を作るか。</strong></p>
@@ -48,6 +43,8 @@ a{color:var(--accent)}
 <li>✅ 結局、自分ならどう使うか</li>
 </ul>
 <h2>📌 先に結論</h2>
+<figure><img src="img/fig1-good-bad.png" alt="YouWareを使って分かったこと"><figcaption>YouWareを使って分かったこと</figcaption></figure>
+
 <p><strong>👍 良かったこと</strong></p>
 <ul>
 <li>✅ AIのチームが役割を分けて、途中経過を見せながら進む</li>
@@ -56,7 +53,6 @@ a{color:var(--accent)}
 <li>✅ チームの中で間違いを見つけて、差し戻していた</li>
 <li>✅ 調査がそのまま、レポート・比較表・スライド・制作指示書になる</li>
 <li>✅ 直す場所を指定すると、初稿を残したまま、そこだけ直した版を作る</li>
-<li>✅ 9月29日の再検証では、HTMLの保存と、画像生成・PNGの保存までできた</li>
 </ul>
 <p><strong>😣 困ったこと</strong></p>
 <ul>
@@ -64,6 +60,8 @@ a{color:var(--accent)}
 <li>⚠️ 競合の字幕が取れず、動画の中身までは見ていない</li>
 <li>⚠️ 1本の調査に20分以上かかる</li>
 <li>⚠️ 初稿には、根拠のない言い切りや架空の数字が混ざる（リーダー役が直したが、ゼロではない）</li>
+<li>⚠️ お試し中はダウンロードすると購入画面に移り、手元のソフトで直すところまで試せなかった</li>
+<li>⚠️ 画像生成は使えず、図はSVGになった</li>
 <li>⚠️ 図の指示に細かいずれがあり、作る前の読み直しは要る</li>
 </ul>
 <p>調べた内容と、使った機能を順番に書きます。</p>
@@ -76,38 +74,48 @@ a{color:var(--accent)}
 <li>📄 <strong>成果物</strong>：HTMLのレポート、Excel、スライド、図。YouWareの中で開いて確認できます</li>
 <li>🤖 <strong>モデル選択</strong>：今回は「Auto」のままにしました</li>
 </ul>
-<p><figure><img alt="競合分析チームの役割" src="img/03_youware_competitor_team.png"/><figcaption>競合分析チームの役割</figcaption></figure></p>
+<figure><img src="img/03_youware_competitor_team.png" alt="競合分析チームの役割"><figcaption>競合分析チームの役割</figcaption></figure>
+
 <h2>📺 調査1 YouTube：つながっても、読めない数字があった</h2>
-<p><figure><img alt="YouTubeをつないで、読めた物・読めなかった物" src="img/fig3-youtube-read.png"/><figcaption>YouTubeをつないで、読めた物・読めなかった物</figcaption></figure></p>
+<figure><img src="img/fig3-youtube-read.png" alt="YouTubeをつないで、読めた物・読めなかった物"><figcaption>YouTubeをつないで、読めた物・読めなかった物</figcaption></figure>
+
 <p>最初はYouTubeです。接続済みのYouTubeをつないで、「自分のチャンネルの数字を読んで、競合と比べて、次の4週間で試す企画を3つ出して。読めなかった数字は読めなかったと書いて」と頼みました。</p>
 <p>まず接続先のチャンネル名とIDを確かめて、自分のものと一致すると報告してきました。そのあと、こう書いてきました。</p>
 <blockquote>
 <p>期間別のStudio指標を取得するAnalyticsレポート機能は、現在のYouTubeツール一覧では見当たりません。</p>
 </blockquote>
-<p><figure><img alt="読めた範囲の報告" src="img/15_youware_connector_result.png"/><figcaption>読めた範囲の報告</figcaption></figure></p>
+<figure><img src="img/15_youware_connector_result.png" alt="読めた範囲の報告"><figcaption>読めた範囲の報告</figcaption></figure>
+
 <p>なぜ読めないのか。進捗欄を見ると理由が分かりました。コネクタの中には、「チャンネル一覧を取る」「動画の詳細を取る」といった小さな道具が入っていて、AIはそこから選んで使います。仕組みはMCP（AIが外のサービスを使うための共通の差込口）です。</p>
 <p>📊 今回YouTubeで使われた道具は7種類でした。</p>
-<p><figure><img alt="YouTubeコネクタで使われた7つの道具" src="img/table_mcp_tools.png"/><figcaption>YouTubeコネクタで使われた7つの道具</figcaption></figure></p>
+<figure><img src="img/table_mcp_tools.png" alt="YouTubeコネクタで使われた7つの道具"><figcaption>YouTubeコネクタで使われた7つの道具</figcaption></figure>
+
 <p>全部、公開されている情報を読む道具でした。一番知りたかったクリック率・視聴維持率・収益の道具は、今回見えた範囲にはありません。なので、その数字は自分でStudioから取って渡しました。YouWareには「コネクタで取った値」と「渡した値」を分けて扱ってもらっています。</p>
 <p>それでも、1回目の調査でHTMLのレポート、Excelの比較表、5枚のスライド、図2枚ができました。</p>
-<p><figure><img alt="作成されたスライド" src="img/62_slides_preview.png"/><figcaption>作成されたスライド</figcaption></figure></p>
+<figure><img src="img/62_slides_preview.png" alt="作成されたスライド"><figcaption>作成されたスライド</figcaption></figure>
+
 <p>2回目は、自分が普段見ている競合5チャンネルを指定して「どんな話の型が反応されているか」を調べてもらいました。各チャンネルの最新10本、計50本の公開情報から、比べる対象を23本、話の筋を確認する候補を15本に絞っています（画像の競合名はぼかしています）。</p>
-<p><figure><img alt="競合調査のレポート" src="img/100_story_report_preview_blur.png"/><figcaption>競合調査のレポート</figcaption></figure></p>
+<figure><img src="img/100_story_report_preview_blur.png" alt="競合調査のレポート"><figcaption>競合調査のレポート</figcaption></figure>
+
 <p>出てきた型は「小さな異変 → 動物が動く → 人の選択が変わる → 具体的な行動で終わる」。自分で調べて台本に入れていた型と同じでした。ただ、字幕の本文は「所有者制限で403」で取れず、動画の中身は見ていません。説明欄と題名から読んだ型です。</p>
 <h2>💬 調査2 LINE：絵文字を主軸にする案が出た</h2>
 <p>次はLINEスタンプと絵文字です。コネクタはつながず、Web調査だけで頼みました。</p>
 <p>先にコネクタ一覧で「LINE」を検索してみました。LINEのコネクタはありましたが、説明は「公式アカウントのMessaging API」用。スタンプの売上を読む物とは書かれていません。</p>
-<p><figure><img alt="コネクタでLINEを検索" src="img/connector_line_search.png"/><figcaption>コネクタでLINEを検索</figcaption></figure></p>
+<figure><img src="img/connector_line_search.png" alt="コネクタでLINEを検索"><figcaption>コネクタでLINEを検索</figcaption></figure>
+
 <p>📌 レポートの結論は「次の3か月は絵文字を主軸に。ドット絵の『社会人の日常リアクション』を試す」。制作時間は絵文字7割・スタンプ3割という配分案でした。</p>
-<p><figure><img alt="LINE調査の結論ページ" src="img/line_conclusion.png"/><figcaption>LINE調査の結論ページ</figcaption></figure></p>
+<figure><img src="img/line_conclusion.png" alt="LINE調査の結論ページ"><figcaption>LINE調査の結論ページ</figcaption></figure>
+
 <p>この7割・3割は、自分が伝えた「売上の中心は絵文字」から置いた仮の配分で、売上の予測ではないと明記されていました。LINEの人気一覧で掲載されていた10作品を比べ、一次ページのリンクを23件付けています（作品名はぼかしています）。</p>
-<p><figure><img alt="LINE作品の比較表" src="img/line_compare_blur.png"/><figcaption>LINE作品の比較表</figcaption></figure></p>
+<figure><img src="img/line_compare_blur.png" alt="LINE作品の比較表"><figcaption>LINE作品の比較表</figcaption></figure>
+
 <p>良かったのは、ランキングを売上と混ぜていないところです。「掲載順は売上の順位ではない」「動く作品が多く見えたが、動く方が売れるとは言えない」と、言えることと言えないことを分けていました。</p>
 <h2>📝 調査3 note：記事の構成を3つの型にまとめた</h2>
 <p>最後はnoteです。「読まれて、有料やメンバーシップにつながる記事の構成」を調べてもらいました。</p>
 <p>コネクタで「note」を検索すると、出てきたのはListen Notesという別のサービスだけでした。note専用のコネクタは、今回は見つかっていません。</p>
 <p>📌 結論は「結果は無料で見せて信頼を得る。再現キットは単発の有料に。続けて観測する内容はメンバーシップに」。</p>
-<p><figure><img alt="note調査の結論" src="img/note_conclusion.png"/><figcaption>note調査の結論</figcaption></figure></p>
+<figure><img src="img/note_conclusion.png" alt="note調査の結論"><figcaption>note調査の結論</figcaption></figure>
+
 <p>構成の型として出てきたのは3つです。</p>
 <ul>
 <li>🧪 実測比較型：条件 → 結果 → 例外 → 読者別の判断 → 再現キット</li>
@@ -115,14 +123,17 @@ a{color:var(--accent)}
 <li>🔭 定点観測型：今回の差分 → 記録 → 仮説の修正 → 次に見ること</li>
 </ul>
 <p>スキが見える同じジャンルの記事5本を並べて、見出しの流れや画像の使い方を比べていました（著者名などはぼかしています）。ただ、スキは売上や加入の数ではありません。レポートにもそう書かれていて、「まず次の1本で試して、自分の数字と比べる」という提案で終わっていました。</p>
-<p><figure><img alt="note記事の比較表" src="img/note_compare_blur.png"/><figcaption>note記事の比較表</figcaption></figure></p>
+<figure><img src="img/note_compare_blur.png" alt="note記事の比較表"><figcaption>note記事の比較表</figcaption></figure>
+
 <p>この記事も、実は「実測比較型」に近い形で書いています。</p>
 <h2>👥 チームの中で間違いを差し戻していた</h2>
 <p>LINEとnoteで一番印象に残ったのは、リーダー役の見直しです。</p>
 <p>LINEでは、担当の係が作品の画像を見ていないのに絵柄を言い切っていました。リーダー役がそれを見つけて、「観察した事実と提案を分けて」と差し戻しています。</p>
-<p><figure><img alt="LINEの差し戻し" src="img/line_review.png"/><figcaption>LINEの差し戻し</figcaption></figure></p>
+<figure><img src="img/line_review.png" alt="LINEの差し戻し"><figcaption>LINEの差し戻し</figcaption></figure>
+
 <p>noteでも、URLのない仮置きの行や、根拠のない言い切り、架空の数字が入っていました。これもリーダー役が採用せずに直させています。</p>
-<p><figure><img alt="noteの差し戻し" src="img/note_review.png"/><figcaption>noteの差し戻し</figcaption></figure></p>
+<figure><img src="img/note_review.png" alt="noteの差し戻し"><figcaption>noteの差し戻し</figcaption></figure>
+
 <p>チームにしても、間違いは入ります。ただ、見直す工程が画面で見えるので、どこを信じていいかの目安になりました。</p>
 <h2>🛠️ 作らせて、3か所だけ直させた</h2>
 <p>調べて終わりでは、仕事になりません。そこでnoteの調査と同じ画面で、調査結果を「使える資料」に変えてもらいました。頼んだのは3つです。</p>
@@ -134,58 +145,50 @@ a{color:var(--accent)}
 <p>1通目で、表・ラフ・スライド4枚・工程図がまとまって出てきました。📊 表示された作業時間は21分1秒です。</p>
 <p>次に、2通目で3か所だけ直すように頼みました。初稿は残して、別の版として作らせています。</p>
 <p>1つ目は絵文字です。「8個の中で一番似ている2個を選び、小さくしても見分けがつくように片方を変えて」と頼みました。④「確認」と⑤「着手」が似ていると判断され、④だけ、ボードを高く掲げて指を1本立てるポーズに変わりました。</p>
-<p><figure><img alt="絵文字の配置ラフ。直す前と後" src="img/cmp_emoji_rough.png"/><figcaption>絵文字の配置ラフ。直す前と後</figcaption></figure></p>
+<figure><img src="img/cmp_emoji_rough.png" alt="絵文字の配置ラフ。直す前と後"><figcaption>絵文字の配置ラフ。直す前と後</figcaption></figure>
+
 <p>2つ目はスライド3枚目です。「無料と有料の境目を、見出しの並びの中に1本の線で示して」と頼むと、見出しの下に線が引かれ、線の上（無料）と下（有料）に置く物が1行ずつ入りました。</p>
-<p><figure><img alt="スライド3枚目。直す前と後" src="img/cmp_slide3.png"/><figcaption>スライド3枚目。直す前と後</figcaption></figure></p>
+<figure><img src="img/cmp_slide3.png" alt="スライド3枚目。直す前と後"><figcaption>スライド3枚目。直す前と後</figcaption></figure>
+
 <p>3つ目は工程図です。「人の確認」の箱に、「出典のURLがあるか」「事実と推測が分かれているか」の2つが書き足されました。</p>
-<p><figure><img alt="工程図。直す前と後" src="img/cmp_process.png"/><figcaption>工程図。直す前と後</figcaption></figure></p>
+<figure><img src="img/cmp_process.png" alt="工程図。直す前と後"><figcaption>工程図。直す前と後</figcaption></figure>
+
 <p>📊 修正にかかった時間は11分でした。直す場所を具体的に指定すると、そこだけ変えて、変えなかった場所も一覧にして返してきます。調査から制作のたたき台までを、ひと続きで作れるのは便利でした。</p>
-<p>⚠️ ただ、9月25日にできたのは完成品ではありません。絵文字はSVGのラフで、この時点では画像を生成していません。Wordの指示書はファイル名は出ましたが、ダウンロードしていないので中身は見ていません。</p>
-<h2 id="feedback-20260929">9月29日追記：ダウンロードと画像生成を試し直した</h2>
-<p>記事を共有したあと、YouWareの担当者から「トライアル会員でもダウンロードできる」「画像・動画生成モデルの呼び出しに対応した」と連絡をもらいました。そこで、以前使ったLINEの調査画面を開き直し、ダウンロードと画像生成を試しました。今回はログインを自分で行い、その後のブラウザ操作と保存ファイルの確認はCodexに任せています。</p>
-<p><strong>今回は、HTMLもPNGも手元に保存できました。</strong></p>
-<p>まず、既存のLINE調査レポートをダウンロード。保存したHTMLをローカルのブラウザで開くと、結論・比較表・制作配分の案まで表示されました。YouWareの中だけで読む資料ではなく、ファイルとして取り出せるところまで確認できています。ただし、保存後の編集までは試していません。</p>
-<p><figure><img alt="ダウンロードしたHTMLをローカルで開いた画面" src="img/03_download_rendered.png"/><figcaption>ダウンロードしたHTMLをローカルで開いた画面</figcaption></figure></p>
-<p>次は画像です。調査で出た「社会人の日常リアクション」をもとに、丸い豆型の仮キャラが仕事終わりに手を振る絵を1枚頼みました。文字なし、白背景、太い輪郭。既存のキャラをまねず、HTMLやSVGの代わりではなく、画像生成モデルで作る指定です。</p>
-<p>YouWareは先にモデル名・最終プロンプト・見積もりを出し、承認を求めてきました。画面上のモデル名は <code>gpt-image-2.5-flare</code>、見積もりは約21.7 YouWareクレジット。これを承認すると、1回の生成でPNGが返ってきました。モデル名はYouWare上の表示を記録したもので、提供元や内部のモデル構成まで確認したわけではありません。</p>
-<p><figure><img alt="YouWareで画像生成が完了した画面" src="img/04_generated_preview.png"/><figcaption>YouWareで画像生成が完了した画面</figcaption></figure></p>
-<p><figure><img alt="保存した試作画像。1024×1024のPNG" src="img/recheck-20260929.png"/><figcaption>保存した試作画像。1024×1024のPNG</figcaption></figure></p>
-<p>保存した実物もPNGで、サイズは1024×1024。黄色い豆型の体、紺のネクタイ、片手を振るポーズになっています。表情や配色を相談する最初の1枚としては使えそうです。ただ、これは白背景で、透過画像ではありません。LINE用にサイズを整え、同じキャラで必要数をそろえ、申請できるかを確かめるところまでは進めていません。</p>
-<p>作業時間の表示は、見積もりとプロンプトの準備が2分54秒、承認後の作業が3分17秒でした。後者にもファイルの用意などが含まれるため、画像モデルだけの生成時間とは区別しています。</p>
-<p>クレジットは、今回のやり取り前後で2,282から2,241へ、合計41減っていました。<strong>見積もり21.7と、残高の差41は別の数字です。</strong>準備や会話などを含む内訳は分からず、画像1枚の実消費を21.7とも41とも断定できません。「30以内」と指定したのは画像生成1回ですが、やり取り全体は30を超えました。追加購入はしていません。</p>
-<p>もう1点、トライアルについて。担当者の説明は「トライアル会員でもダウンロード可能」です。一方、今回のアカウント表示は「Pro」で、画面だけではトライアル中かどうかを確定できませんでした。確認できたのは、このアカウントでHTMLとPNGをダウンロードできたことです。</p>
-<p>これで、以前の「画像生成は使えなかった」「指示書とラフまで」という評価は更新できます。調査で出た案を、その場で画像の試作につなげるところまでできました。動画生成、Wordやスライドのダウンロード、LINEの商品一式の完成は今回の検証には含めていません。</p>
+<p>⚠️ ただ、これは完成品ではありません。絵文字はSVGのラフで、画像はまだ描いていません。Wordの指示書はファイル名は出ましたが、ダウンロードしていないので中身は見ていません。</p>
 <h2>⚠️ 困ったところ</h2>
 <p>🔌 <strong>Studioの数字は読めない。</strong>上に書いた通りです。YouTubeを「つないだ」ことと「欲しい数字が取れた」ことは別でした。</p>
 <p>⏱️ <strong>時間がかかる。</strong>表示された作業時間は、LINEが24分32秒、noteが22分51秒。すぐ答えがほしい相談には向きません。</p>
-<p>💳 <strong>初回はダウンロードで購入画面に移った。</strong>9月24〜25日の検証では、購入画面に移って保存を試せませんでした。9月29日は同じ結果ではなく、HTMLとPNGの保存に成功しています。トライアル条件は上の追記に分けて書きました。</p>
-<p>🖼️ <strong>初回の画像生成には失敗した。</strong>note用の図を2枚頼んだ時は、2回ともエラーでした。9月25日の追加制作も生成せずSVGになりましたが、9月29日はPNGを1枚生成できました。以前の失敗だけで「使えない」とは言えなくなりました。</p>
+<p>💳 <strong>ダウンロードで購入画面に。</strong>レポートやスライドはYouWareの中で読めました。ただ、お試しプランでダウンロードボタンを押すとプランの購入画面に移りました。購入はしていないので、手元のソフトで直すところまでは試していません。</p>
+<p>🖼️ <strong>画像生成は使えなかった。</strong>note用の図を2枚頼んだ時は、2回ともエラーでした。追加制作の時は、YouWareが約21.7クレジットと見積もったうえで生成をせず、SVGの図に切り替えています。</p>
 <p>🔍 <strong>細かいずれ。</strong>以前頼んだ動画の台本で、平均と中央値の例に「全部2」の値を「等間隔に並べる」という図の指示がありました。全部2なら同じ位置に重なります。作る前に読み直しは要ります。</p>
 <h2>🎯 結局、使うならこんな感じ</h2>
 <p>全部試してみて、自分の副業で使うならこの流れになります。</p>
+<figure><img src="img/fig9-use-flow.png" alt="結局、使うならこの流れ"><figcaption>結局、使うならこの流れ</figcaption></figure>
+
 <ol>
 <li>🎯 <strong>問いを1つに絞る。</strong>「次の3か月、絵文字とスタンプのどちらに時間を使うか」くらいまで狭くする</li>
 <li>🔎 <strong>YouWareに調べてもらう。</strong>公開情報を集めて、出典つきの比較表と、言えること・言えないことを分けた結論1枚を作ってもらう</li>
 <li>📊 <strong>自分の数字は自分で渡す。</strong>Studioの数字や売上は、つないでも読めない物がある。管理画面から取って渡し、AIが取った値と分けてもらう</li>
 <li>📄 <strong>方針が決まったら、そのまま制作指示書やスライドにする。</strong>直したい所は場所を指定して、初稿を残したまま直させる</li>
-<li>🎨 <strong>絵はまず1枚試作する。</strong>YouWare内で画像生成とPNGの保存まで試せた。LINE用に使うなら、透過・サイズ・キャラの統一を別途確認する</li>
+<li>🎨 <strong>絵は画像生成に任せる。</strong>YouWareが作るのは指示書とラフまで。LINEの絵文字は、指示書をもとに別の画像生成で描く</li>
 <li>📈 <strong>出してから数字を見る。</strong>提案が当たったかどうかは、公開・販売したあとの自分の数字でしか分からない</li>
 </ol>
-<p>YouWareに任せるのは「決める前の材料集め」と「作る前の指示書づくり」。そこから画像を1枚試作する使い方もできました。自分の管理画面の数字、動画の中身、絵の良し悪しは、自分で見て判断する。この線を引いておくと、待ち時間の20分も「その間に別の作業をする時間」になります。</p>
+<p>YouWareに任せるのは「決める前の材料集め」と「作る前の指示書づくり」。自分の管理画面の数字、動画の中身、絵の良し悪しは、自分で見て判断する。この線を引いておくと、待ち時間の20分も「その間に別の作業をする時間」になります。</p>
 <p>最初の1回は、進捗欄を開いて、どの道具が使われたかを見てください。つないだサービスの何が読めて、何が読めないかが分かります。</p>
 <p>💡 <strong>コネクタは数より、中にどの道具が入っているかで決まります。</strong></p>
 <h2>📋 試した条件</h2>
 <ul>
 <li>サービス：<a href="https://www.youware.com/">YouWare</a></li>
-<li>期間：2026年9月24〜25日。ダウンロードと画像生成は9月29日に再検証</li>
-<li>プラン：初回はPro（お試し）として利用。9月29日の表示はProで、トライアル状態は未確認。追加の購入・新しいコネクタの接続はなし</li>
-<li>クレジット：YouTube 1回目 3,150 → 2,807（差343）／LINE 2,807 → 2,549（差258）／note 2,549 → 2,292（差257）／追加制作と修正 2,292 → 2,232（差60）。9月29日の再検証は2,282 → 2,241（差41）。日をまたいだ残高の変化と、処理ごとの内訳は不明</li>
+<li>期間：2026年9月24〜25日</li>
+<li>プラン：Pro（お試し）。追加の購入・新しいコネクタの接続はなし</li>
+<li>クレジット：YouTube 1回目 3,150 → 2,807（差343）／LINE 2,807 → 2,549（差258）／note 2,549 → 2,292（差257）／追加制作と修正 2,292 → 2,232（差60）。処理ごとの内訳は不明</li>
 <li>作業時間はYouWareの表示。こちらの確認時間は含まない</li>
-<li>他のAIと同じ条件での比較はしていない。9月29日の画像生成は1回。以前の画像生成失敗とは依頼内容も日付も異なる</li>
+<li>試行は各1回。他のAIと同じ条件での比較はしていない</li>
 <li>提案された企画は、まだ公開も販売もしていない。再生や売上への効果は分からない</li>
 </ul>
-<hr/>
+<hr />
 <p>あなたなら、YouWareに最初に何を調べさせますか？</p>
 <p>スキを押してもらえると次を書く励みになります🌟</p>
-<h1>YouWare #AI活用 #副業 #YouTube運営 #LINEスタンプ #note運営 #MCP #PR</h1></article>
-</head></html>
+<h1>YouWare #AI活用 #副業 #YouTube運営 #LINEスタンプ #note運営 #MCP #PR</h1>
+</article>
+</html>
